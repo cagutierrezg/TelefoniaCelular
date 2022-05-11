@@ -53,7 +53,7 @@ pipeline {
         echo "------------>Análisis de código estático<------------"
         
 		sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:telefonia.celular-camila.gutierrez', 
-        sonarName:'CeibaADN-TelefoniaCelular(camila.gutierrez)', 
+        sonarName:'"CeibaADN-TelefoniaCelular(camila.gutierrez)"', 
         sonarPathProperties:'./microservicio/sonar-project.properties')
 		}
 
