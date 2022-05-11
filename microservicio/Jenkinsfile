@@ -53,8 +53,8 @@ pipeline {
         echo '------------>Análisis de código estático<------------'
         
 	sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:telefoniacelular-camila.gutierrez', 
-        sonarName:'CeibaADN-TelefoniaCelular(camila.gutierrez)', 
-        sonarPathProperties:'./microservicio/sonar-project.properties')
+        sonarName:'CeibaADN-TelefoniCelular(camila.gutierrez)', 
+        sonarPathProperties:'/sonar-project.properties')
 
         
       }
@@ -63,7 +63,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-		sh './gradlew --b ./build.gradle build -x test'
+		sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
 
       }
     }  
