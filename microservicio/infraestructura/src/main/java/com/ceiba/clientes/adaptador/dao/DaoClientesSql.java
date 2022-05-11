@@ -39,11 +39,7 @@ public class DaoClientesSql implements DaoCliente {
 
         List<DtoClientes> list = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlConsultarCliente, paramSource, new MapeoClientes());
 
-        if (list.size() > 1) {
-
-            throw new ExcepcionDuplicidad(CLIENTE_EXISTE_MAS_DE_UNA_VEZ);
-
-        } else if (list.isEmpty()) {
+        if (list.isEmpty()) {
 
             throw new ExcepcionSinDatos(NO_EXISTE_CLIENTE);
 
