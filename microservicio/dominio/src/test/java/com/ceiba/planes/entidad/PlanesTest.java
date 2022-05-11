@@ -1,18 +1,12 @@
 package com.ceiba.planes.entidad;
 
 import com.ceiba.BasePrueba;
-import com.ceiba.clientes.modelo.entidad.Clientes;
-import com.ceiba.clientes.servicio.testdatabuilder.ClientesTestDataBuilder;
-import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.planes.modelo.entidad.Planes;
 import com.ceiba.planes.servicio.testdatabuilder.PlanesTestDataBuilder;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
