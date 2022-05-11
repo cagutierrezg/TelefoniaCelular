@@ -2,7 +2,6 @@ package com.ceiba.clientes.adaptador.dao;
 
 import com.ceiba.clientes.modelo.dto.DtoClientes;
 import com.ceiba.clientes.puerto.dao.DaoCliente;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;

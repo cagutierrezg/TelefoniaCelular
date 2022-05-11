@@ -86,6 +86,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
     }
 
     @Test
+    @DisplayName("Deberia fallar por buscar cliente que no existe")
+    void deberiaFallarPorBuscarClienteInexiste() throws Exception {
+        String documentNumber = "1547896216";
+        String phoneNumber = "3175698425";
+        mocMvc.perform(get("/clientes/{documentNumber}/{phoneNumber}", documentNumber, phoneNumber))
+
+                .andExpect(status().isNotFound());
+
+
+    }
+
+    @Test
     @DisplayName("Deberia eliminar un cliente")
     void deberiaEliminarUnCliente() throws Exception {
         // arrange

@@ -37,6 +37,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         BasePrueba.assertThrows(() -> servicioCrearCliente.ejecutar(cliente), ExcepcionDuplicidad.class,"El usuario ya existe en el sistema");
     }
 
+     @Test
+     @DisplayName("Deberia lanzar una exepcion cuando el cliente ya exista")
+     void deberiaLanzarUnaExepcionCuandoElClienteYaExista() {
+         // arrange
+         Clientes cliente = new ClientesTestDataBuilder().build();
+         RepositorioClientes repositorioClientes = Mockito.mock(RepositorioClientes.class);
+         Mockito.when(repositorioClientes.existeCliente(Mockito.anyString(), Mockito.anyString())).thenReturn(false);
+         Mockito.when(repositorioClientes.crearCliente(cliente)).thenReturn(1L);
+         ServicioCrearCliente servicioCrearCliente = new ServicioCrearCliente(repositorioClientes);
+         // act
+         Long id = servicioCrearCliente.ejecutar(cliente);
+         //- assert
+         assertEquals(1L,id);
+         Mockito.verify(repositorioClientes, Mockito.times(1)).crearCliente(cliente);
+
+
+    }
+
 
 
     @Test
