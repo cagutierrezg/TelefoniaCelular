@@ -26,6 +26,8 @@ pipeline {
       JDK14_Centos
 */
 
+
+
   //Aquí comienzan los “items” del Pipeline
   stages{
     stage('Checkout') {
@@ -38,9 +40,9 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-		sh 'cd microservicio'
-		sh 'chmod +x gradlew'
-		sh './gradlew --b ./build.gradle test'
+		
+		sh 'chmod +x ./microservicio/gradlew'
+		sh './microservicio/gradlew --b ./microservicio/gradlew/build.gradle test'
 
 
       }
