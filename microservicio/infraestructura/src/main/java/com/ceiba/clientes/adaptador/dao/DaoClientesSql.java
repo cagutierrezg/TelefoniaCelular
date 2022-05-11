@@ -2,6 +2,7 @@ package com.ceiba.clientes.adaptador.dao;
 
 import com.ceiba.clientes.modelo.dto.DtoClientes;
 import com.ceiba.clientes.puerto.dao.DaoCliente;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
@@ -14,6 +15,8 @@ import java.util.List;
 public class DaoClientesSql implements DaoCliente {
 
     private static final String NO_EXISTE_CLIENTE = "No existe el cliente en el sistema";
+
+    private static final String CLIENTE_EXISTE_MAS_DE_UNA_VEZ = "El cliente existe mas de una vez";
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
@@ -36,7 +39,11 @@ public class DaoClientesSql implements DaoCliente {
 
         List<DtoClientes> list = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlConsultarCliente, paramSource, new MapeoClientes());
 
-        if (list.isEmpty()) {
+        if (list.size() > 1) {
+
+            throw new ExcepcionDuplicidad(CLIENTE_EXISTE_MAS_DE_UNA_VEZ);
+
+        } else if (list.isEmpty()) {
 
             throw new ExcepcionSinDatos(NO_EXISTE_CLIENTE);
 
