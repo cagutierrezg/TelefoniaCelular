@@ -2,8 +2,7 @@ package com.ceiba.planes.comando;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ComandoPlanes {
