@@ -2,7 +2,7 @@ package com.ceiba.clientes.modelo.dto;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 
 
 @Getter
