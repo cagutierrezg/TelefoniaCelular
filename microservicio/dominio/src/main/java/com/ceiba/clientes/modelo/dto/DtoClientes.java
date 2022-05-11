@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
-@Data
+@Getter
 @AllArgsConstructor
 public class DtoClientes {
 
