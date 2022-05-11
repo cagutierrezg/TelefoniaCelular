@@ -16,8 +16,6 @@ public class DaoClientesSql implements DaoCliente {
 
     private static final String NO_EXISTE_CLIENTE = "No existe el cliente en el sistema";
 
-    private static final String CLIENTE_EXISTE_MAS_DE_UNA_VEZ = "El cliente existe mas de una vez";
-
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     @SqlStatement(namespace = "clientes", value = "consultar_cliente")
