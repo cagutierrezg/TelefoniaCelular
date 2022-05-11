@@ -16,8 +16,6 @@ public class DaoClientesSql implements DaoCliente {
 
     private static final String NO_EXISTE_CLIENTE = "No existe el cliente en el sistema";
 
-    private static final String CLIENTE_EXISTE_MAS_DE_UNA_VEZ = "El cliente existe mas de una vez";
-
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     @SqlStatement(namespace = "clientes", value = "consultar_cliente")
@@ -39,17 +37,14 @@ public class DaoClientesSql implements DaoCliente {
 
         List<DtoClientes> list = this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlConsultarCliente, paramSource, new MapeoClientes());
 
-        if (list.size() > 1) {
 
-            throw new ExcepcionDuplicidad(CLIENTE_EXISTE_MAS_DE_UNA_VEZ);
-
-        } else if (list.isEmpty()) {
+        if (list.isEmpty()) {
 
             throw new ExcepcionSinDatos(NO_EXISTE_CLIENTE);
 
         } else {
 
-             client =  new DtoClientes(list.get(0).getId(), list.get(0).getDocumentType(), list.get(0).getDocumentNumber(), list.get(0).getClientName(), list.get(0).getPhoneNumber(), list.get(0).getNamePlan(), list.get(0).getValuePlan(), list.get(0).getTime());
+            client = new DtoClientes(list.get(0).getId(), list.get(0).getDocumentType(), list.get(0).getDocumentNumber(), list.get(0).getClientName(), list.get(0).getPhoneNumber(), list.get(0).getNamePlan(), list.get(0).getValuePlan(), list.get(0).getTime());
 
 
         }
