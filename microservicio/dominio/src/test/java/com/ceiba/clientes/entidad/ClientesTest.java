@@ -39,6 +39,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
                 ExcepcionValorObligatorio.class, "Se debe ingresar el tipo de documento");
     }
 
+     @Test
+     void deberiaFallarSinFechaInicio() {
+
+         //Arrange
+         ClientesTestDataBuilder clientesTestDataBuilder = new ClientesTestDataBuilder().conStartDate(null).conId(1L);
+         //act-assert
+         BasePrueba.assertThrows(() -> {
+                     clientesTestDataBuilder.build();
+                 },
+                 ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de inicio");
+     }
+
     @Test
     void deberiaFallarSinNumeroDeDocumento() {
 
