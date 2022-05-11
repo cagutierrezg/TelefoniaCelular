@@ -16,7 +16,6 @@ public class ClientesTest {
     @DisplayName("Deberia crear correctamente el cliente")
     void deberiaCrearCorrectamenteElCliente() {
         // arrange
-        LocalDateTime fechaCreacion = LocalDateTime.now();
         Clientes clientes = new ClientesTestDataBuilder().build();
         //assert
         assertEquals(3, clientes.getId());
@@ -26,7 +25,6 @@ public class ClientesTest {
         assertEquals("3456218741", clientes.getPhoneNumber());
         assertEquals("1", clientes.getPlanId());
         assertEquals("30.000", clientes.getPlanValue());
-        assertEquals(fechaCreacion, clientes.getStartDate());
     }
 
     @Test
