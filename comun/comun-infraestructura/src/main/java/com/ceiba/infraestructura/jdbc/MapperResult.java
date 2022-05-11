@@ -34,9 +34,8 @@ public interface MapperResult {
         Timestamp fecha = resultset.getTimestamp(label);
         Timestamp fechaactual = new Timestamp(System.currentTimeMillis());
 
-        long  days =(fechaactual.getTime() - fecha.getTime())/86400000;
+        return (fechaactual.getTime() - fecha.getTime())/86400000;
 
-        return days;
 
     }
 

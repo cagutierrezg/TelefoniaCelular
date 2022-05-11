@@ -9,8 +9,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class PlanesTest {
+ class PlanesTest {
     @Test
     @DisplayName("Deberia crear correctamente el plan")
     void deberiaCrearCorrectamenteElPlan() {

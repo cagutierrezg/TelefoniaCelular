@@ -25,7 +25,7 @@ public class RepositorioPlanesSql implements RepositorioPlanes {
 
     @Override
     public Long crearPlan(Planes planes) {
-        return this.customNamedParameterJdbcTemplate.crearPlan(planes, sqlCrearPlan);
+        return this.customNamedParameterJdbcTemplate.crear(planes, sqlCrearPlan);
     }
 
     @Override

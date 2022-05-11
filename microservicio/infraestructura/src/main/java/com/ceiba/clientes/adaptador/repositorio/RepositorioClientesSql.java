@@ -34,7 +34,7 @@ public class RepositorioClientesSql implements RepositorioClientes {
 
     @Override
     public Long crearCliente(Clientes client) {
-        return this.customNamedParameterJdbcTemplate.crearCliente(client, sqlCrearCliente);
+        return this.customNamedParameterJdbcTemplate.crear(client, sqlCrearCliente);
     }
 
     @Override

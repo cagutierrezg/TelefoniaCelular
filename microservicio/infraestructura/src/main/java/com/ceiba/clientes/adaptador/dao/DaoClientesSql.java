@@ -31,7 +31,7 @@ public class DaoClientesSql implements DaoCliente {
     @Override
     public DtoClientes listarClientes(String documentNumber, String phoneNumber) {
 
-        DtoClientes client = new DtoClientes();
+        DtoClientes client;
 
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("identificationNumber", documentNumber);
@@ -49,7 +49,7 @@ public class DaoClientesSql implements DaoCliente {
 
         } else {
 
-           client =  new DtoClientes(list.get(0).getId(), list.get(0).getDocumentType(), list.get(0).getDocumentNumber(), list.get(0).getClientName(), list.get(0).getPhoneNumber(), list.get(0).getNamePlan(), list.get(0).getValuePlan(), list.get(0).getTime());
+             client =  new DtoClientes(list.get(0).getId(), list.get(0).getDocumentType(), list.get(0).getDocumentNumber(), list.get(0).getClientName(), list.get(0).getPhoneNumber(), list.get(0).getNamePlan(), list.get(0).getValuePlan(), list.get(0).getTime());
 
 
         }

@@ -11,7 +11,7 @@ import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ServicioCrearPlanesTest {
+ class ServicioCrearPlanesTest {
 
 
     @Test

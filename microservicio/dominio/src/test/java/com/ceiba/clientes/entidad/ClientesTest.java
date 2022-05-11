@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ClientesTest {
+ class ClientesTest {
     @Test
     @DisplayName("Deberia crear correctamente el cliente")
     void deberiaCrearCorrectamenteElCliente() {
