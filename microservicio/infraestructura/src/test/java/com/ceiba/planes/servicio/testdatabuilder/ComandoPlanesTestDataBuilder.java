@@ -1,4 +1,4 @@
-package com.ceiba.usuario.servicio.testdatabuilder;
+package com.ceiba.planes.servicio.testdatabuilder;
 
 import com.ceiba.planes.comando.ComandoPlanes;
 

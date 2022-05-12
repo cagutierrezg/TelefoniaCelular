@@ -1,8 +1,8 @@
-package com.ceiba.usuario.controlador;
+package com.ceiba.planes.controlador;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.planes.comando.ComandoPlanes;
-import com.ceiba.usuario.servicio.testdatabuilder.ComandoPlanesTestDataBuilder;
+import com.ceiba.planes.servicio.testdatabuilder.ComandoPlanesTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -50,8 +50,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
     @Test
     @DisplayName("Deberia listar planes")
     void deberiaListarPlanes() throws Exception {
-        Long id = 10L;
-        mocMvc.perform(get("/planes/{id}",id)
+        Long days = 10L;
+        mocMvc.perform(get("/planes/{days}",days)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].planName", is("plan Silver")))
@@ -60,4 +60,5 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
                 .andExpect(jsonPath("$[0].id", is(1)));
 
     }
+    
 }

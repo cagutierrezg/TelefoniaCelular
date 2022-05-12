@@ -1,9 +1,9 @@
-package com.ceiba.usuario.controlador;
+package com.ceiba.cliente.controlador;
 
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.clientes.comando.ComandoClientes;
-import com.ceiba.usuario.servicio.testdatabuilder.ComandoClientesTestDataBuilder;
+import com.ceiba.cliente.servicio.testdatabuilder.ComandoClientesTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(ComandoControladorPlanesTest.class)
+@WebMvcTest(ComandoControladorClienteTest.class)
 @ContextConfiguration(classes = ApplicationMock.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
  class ComandoControladorClienteTest {
@@ -86,7 +86,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
     }
 
     @Test
-    @DisplayName("Deberia fallar por buscar cliente que no existe")
+    @DisplayName("Deberia buscar cliente inexistente")
     void deberiaFallarPorBuscarClienteInexiste() throws Exception {
         String documentNumber = "1547896216";
         String phoneNumber = "3175698425";
