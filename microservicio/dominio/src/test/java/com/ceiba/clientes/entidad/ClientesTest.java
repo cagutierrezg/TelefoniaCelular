@@ -15,8 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
     @Test
     @DisplayName("Deberia crear correctamente el cliente")
     void deberiaCrearCorrectamenteElCliente() {
+
+        LocalDateTime fechaCreacion = LocalDateTime.now();
         // arrange
-        Clientes clientes = new ClientesTestDataBuilder().build();
+        Clientes clientes = new ClientesTestDataBuilder().conStartDate(fechaCreacion).build();
         //assert
         assertEquals(3, clientes.getId());
         assertEquals("CC", clientes.getDocumentType());
@@ -25,6 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         assertEquals("3456218741", clientes.getPhoneNumber());
         assertEquals("1", clientes.getPlanId());
         assertEquals("30.000", clientes.getPlanValue());
+        assertEquals(fechaCreacion, clientes.getStartDate());
     }
 
     @Test
